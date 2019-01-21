@@ -1,0 +1,46 @@
+view,image,input,text,textarea,scroll-view{
+  box-sizing: border-box;
+}
+image{
+  display: block;
+}
+.top-nav{
+  height: 32px;
+  border-radius: 32px;
+  background: rgba(255,255,255,0.7);
+  position: fixed;
+  top: 26px;
+  left: 20rpx;
+  width: 450rpx;
+  z-index: 999;
+}
+.search{
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  font-size: 24rpx;
+}
+.search-placeholder{
+  color: #999;
+  flex-grow: 1;
+  margin-left: 20rpx;
+}
+.container{
+  position: relative;
+  z-index: 2;
+  padding: 150rpx 20rpx 40rpx;
+}
+
+.null{
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #999;
+  align-items: center;
+}
+.null-image{
+  width: 222rpx;
+  height: 222rpx;
+}

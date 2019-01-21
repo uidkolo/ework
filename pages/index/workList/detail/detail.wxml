@@ -1,0 +1,50 @@
+<view class='top-nav'>
+  <navigator class='search' hover-class='none'>
+    <icon type='search' color='#16a9ff' size='18'></icon>
+    <text class='search-placeholder'>输入名称、搜索兼职</text>
+  </navigator>
+</view>
+<image class='bg' mode='top' src='/images/bg.jpg'></image>
+
+<view class='container'>
+  <swiper indicator-dots indicator-active-color='#16a9ff' autoplay circular>
+    <swiper-item>
+      <image class='swiper-img' src='/images/test/01.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image class='swiper-img' src='/images/test/02.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image class='swiper-img' src='/images/test/03.jpg'></image>
+    </swiper-item>
+  </swiper>
+
+  <view class='info'>
+    <view class='info-item info-name'>
+      <text class='info-value'>每天傍晚学校门口发传单，请快快报名</text>
+    </view>
+    <view class='info-item'>
+      <image class='info-icon' src='/images/common/icon_date.png'></image>
+      <text class='info-value'>2018/12/12 - 2019/01/18</text>
+    </view>
+    <view class='info-item'>
+      <image class='info-icon' src='/images/common/icon_time.png'></image>
+      <text class='info-value'>14:00 - 18:00</text>
+    </view>
+    <view class='info-item'>
+      <image class='info-icon' src='/images/common/icon_position.png'></image>
+      <text class='info-value'>福州大学城宿舍楼</text>
+    </view>
+    <view class='info-description'> 新店开张，因推广需要，现招聘20人发传单，每天固定时间再学校门口发传单，按次结算费用，有兴趣的同学们赶紧来报名吧！！！</view>
+  </view>
+</view>
+
+<view class='bottom-box'>
+  <view class='bottom'>
+    <view class='info-num'>
+      <view class='info-num-item'>招聘<text class='info-num-red'>20</text>人</view>
+      <view class='info-num-item'>已报名<text class='info-num-red'>10</text>人</view>
+    </view>
+    <view class='bottom-btn'>立即报名</view>
+  </view>
+</view>

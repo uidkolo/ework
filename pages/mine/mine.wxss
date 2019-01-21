@@ -1,0 +1,67 @@
+.bg{
+  width: 100%;
+  height: 500rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.info{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-top: 200rpx;
+}
+.info-headImg{
+  border: 1rpx solid #fff;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 140rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  border: 4rpx solid #fff;
+}
+.nickname{
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 10rpx;
+}
+
+.work{
+  border-radius: 8rpx;
+  margin: 40rpx 30rpx 0;
+  background: #fff;
+  height: 500rpx;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 1px 20rpx 0 rgba(0,0,0,0.15);
+}
+.work-tab{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f6f6f6;
+}
+.work-tab-item{
+  width: 50%;
+  flex-grow: 1;
+  height: 90rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #666;
+}
+.work-tab-item--active{
+  color: #16a9ff;
+}
+.work-tab-item+.work-tab-item{
+  border-left: 1px solid #f6f6f6;
+}

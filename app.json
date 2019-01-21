@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/workList/workList",
+    "pages/mine/mine",
+    "pages/issue/issue",
+    "pages/index/workList/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffcc00",
+    "navigationBarTitleText": "E兼职",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#16a9ff",
+    "backgroundColor": "#f2f4f5",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/icon/icon_index.png",
+        "selectedIconPath": "/images/icon/icon_index_active.png"
+      },
+      {
+        "pagePath": "pages/issue/issue",
+        "text": "发布",
+        "iconPath": "/images/icon/icon_issue.png",
+        "selectedIconPath": "/images/icon/icon_issue_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/icon/icon_mine.png",
+        "selectedIconPath": "/images/icon/icon_mine_active.png"
+      }
+    ]
+  }
+}

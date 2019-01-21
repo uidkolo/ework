@@ -1,0 +1,82 @@
+<view class='top-nav'>
+  <navigator class='search' hover-class='none'>
+    <icon type='search' color='#16a9ff' size='18'></icon>
+    <text class='search-placeholder'>输入名称、搜索兼职</text>
+  </navigator>
+</view>
+<image class='bg' src='/images/bg.jpg'></image>
+
+<view class='container'>
+  <view class='form'>
+    <view class='form-item'>
+      <text class='form-label'>标题</text>
+      <view class='form-content'>
+        <input class='form-input' placeholder='请输入标题' placeholder-class='placeholder'></input>
+      </view>
+    </view>
+    <view class='form-item'>
+      <text class='form-label'>兼职日期</text>
+      <view class='form-content'>
+        <picker mode='date'>
+          <view class='form-picker'>
+            <text class='forn-picker-value'>2018-09-08</text>
+            <image class='form-picker-icon' src='/images/common/icon_picker.png'></image>
+          </view>
+        </picker>
+        <text class='form-picker-line'>-</text>
+        <picker mode='date'>
+          <view class='form-picker'>
+            <text class='forn-picker-value'>2018-09-08</text>
+            <image class='form-picker-icon' src='/images/common/icon_picker.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='form-item'>
+      <text class='form-label'>兼职时间</text>
+      <view class='form-content'>
+        <picker mode='time'>
+          <view class='form-picker'>
+            <text class='forn-picker-value'>12:00</text>
+            <image class='form-picker-icon' src='/images/common/icon_picker.png'></image>
+          </view>
+        </picker>
+        <text class='form-picker-line'>-</text>
+        <picker mode='time'>
+          <view class='form-picker'>
+            <text class='forn-picker-value'>14:00</text>
+            <image class='form-picker-icon' src='/images/common/icon_picker.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='form-item'>
+      <text class='form-label'>地点</text>
+      <view class='form-content'>
+        <input class='form-input' placeholder='请输入地点' placeholder-class='placeholder'></input>
+      </view>
+    </view>
+    <view class='form-item'>
+      <text class='form-label'>招聘人数</text>
+      <view class='form-content'>
+        <input type='number' class='form-input' placeholder='请输入人数' placeholder-class='placeholder'></input>
+      </view>
+    </view>
+    <view class='form-item'>
+      <text class='form-label'>兼职描述</text>
+      <view class='form-content'>
+        <textarea class='form-textarea' placeholder='请输入兼职描述' placeholder-class='placeholder'></textarea>
+      </view>
+    </view>
+    <view class='form-img'>
+      <view class='form-img-content'>
+        <view class='form-img-box'></view>
+        <view class='form-img-btn'>
+          <image class='form-img-icon' src='/images/common/icon_add.png'></image>
+        </view>
+      </view>
+      <view class='fotm-img-tip'>支持jpg/png，最多只能上传5张</view>
+    </view>
+    <view class='form-btn'>我要发布</view>
+  </view>
+</view>
