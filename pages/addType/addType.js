@@ -1,14 +1,13 @@
-// pages/insue/issue.js
+// pages/addType/addType.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    end: false,
-    pageNo: 1,
-    jobTypes: []
+
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -18,47 +17,57 @@ Page({
   // 获取学校列表
   getSchools() {
     let url = '/wx/school/list'
-    getApp().post(url).then(data => {   
+    getApp().post(url).then(data => {
       this.setData({
         schools: data,
         schoolName: data[0].name,
         schoolId: data[0].id
       })
-      this.getJobTypes()
     })
   },
   // 选择学校
-  pickerSchool(e){
+  pickerSchool(e) {
     let index = e.detail.value
     this.setData({
       schoolName: this.data.schools[index].name,
       schoolId: this.data.schools[index].id
     })
-    this.getJobTypes()
   },
-  // 获取兼职分类
-  getJobTypes(){
-    wx.showLoading({
-      title: '正在加载',
+  // input
+  input(e){
+    this.setData({
+      [e.currentTarget.dataset.key]: e.detail.value
     })
-    let url = '/wx/job-type/page'
-    getApp().post(url,{
-      currentPage: this.data.pageNo,
-      pageSize:10,
-      schoolId: this.data.schoolId
+  },
+  // 选择封面
+  choiceImg(){
+    wx.chooseImage({
+      count: 1,
+      success: res=> {
+        getApp().uploadImage(res.tempFilePaths[0]).then(url=>{
+          this.setData({
+            coverUrl: url
+          })
+        })
+      },
+    })
+  },
+  // 新增
+  addType(){
+    wx.showLoading({
+      title: '正在上传',
+    })
+    let url = '/wx/job-type'
+    getApp().post(url, {
+      "categoryDesc": this.data.categoryDesc,
+      "categoryName": this.data.categoryName,
+      "coverUrl": this.data.coverUrl,
+      "schoolId": this.data.schoolId
     }).then(data=>{
       wx.hideLoading()
-      if(data.length>0){
-        this.data.jobTypes.concat(data)
-        this.setData({
-          pageNo: this.data.pageNo++,
-          jobTypes:this.data.jobTypes
-        })
-      }else{
-        this.setData({
-          end:true
-        })
-      }
+      wx.showToast({
+        title: '新增成功！',
+      })
     })
   },
   /**

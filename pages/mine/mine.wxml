@@ -26,3 +26,19 @@
     </view>
   </view>
 </view>
+
+<view class='mask' wx:if='{{loginMask}}'>
+  <view class='login'>
+    <view class='login-title'>登录</view>
+    <view class='login-content'>
+      <view class='login-content-item'>
+        <text class='login-content-dot'></text>
+        <text class='login-content-text'>获取您的微信昵称、头像</text>
+      </view>
+    </view>
+    <button class='login-btn' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>
+      <image class='login-btn-icon' src='/images/common/wechat.png'></image>
+      <text>授权登录</text>
+    </button>
+  </view>
+</view>

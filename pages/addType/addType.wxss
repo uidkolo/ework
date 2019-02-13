@@ -1,0 +1,69 @@
+.form-item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.form-label{
+  font-size: 28rpx;
+  color: #666;
+  margin-right: 30rpx;
+  flex-shrink: 0;
+}
+.form-textarea{
+  height: 200rpx;
+  border: 1px solid #f6f6f6;
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+.form-input{
+  flex-grow: 1;
+  font-size: 28rpx;
+  height: 68rpx;
+  border-bottom: 1px solid #f6f6f6;
+  padding: 0 20rpx;
+}
+.form-btn{
+  height: 90rpx;
+  background: #16a9ff;
+  color: #fff;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 32rpx;
+  border-radius: 8rpx;
+  margin-top: 40rpx;
+}
+.form-picker-icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+.form-picker{
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+  padding: 0 20rpx;
+  flex-grow: 1;
+  border-bottom: 1px solid #f6f6f6;
+}
+.picker{
+  flex-grow: 1;
+}
+.form-image{
+  flex-grow: 1;
+  border: 1px solid #f6f6f6;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-image-icon{
+  height: 128rpx;
+  width:128rpx;
+}
+.form-image-value{
+  height: 100%;
+  width: 100%;
+}

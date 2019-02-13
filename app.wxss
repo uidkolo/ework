@@ -44,3 +44,29 @@ image{
   width: 222rpx;
   height: 222rpx;
 }
+
+.end{
+  color: #999;
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 24rpx;
+  position: relative;
+  z-index: 9;
+}
+
+.placeholder{
+  color: #CCCCCC;
+}
+
+.mask{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

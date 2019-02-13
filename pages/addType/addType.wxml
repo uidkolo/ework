@@ -1,0 +1,27 @@
+<view class='form container'>
+  <view class='form-item'>
+    <text class='form-label'>分类名称</text>
+    <input class='form-input' placeholder='请输入名称' placeholder-class='placeholder' bindinput='input' data-key='categoryName'></input>
+  </view>
+  <view class='form-item'>
+    <text class='form-label'>选择学校</text>
+    <picker class='picker' range='{{schools}}' range-key='name' bindchange='pickerSchool'>
+      <view class='form-picker'>
+        <text class='form-picker-value'>{{schoolName}}</text>
+        <image class='form-picker-icon' src='/images/common/icon_picker.png'></image>
+      </view>
+    </picker>
+  </view>
+  <view class='form-item'>
+    <text class='form-label'>分类描述</text>
+    <textarea class='form-textarea' placeholder='请输入描述' placeholder-class='placeholder' bindinput='input' data-key='categoryDesc'></textarea>
+  </view>
+  <view class='form-item'>
+    <text class='form-label'>选择封面</text>
+    <view class='form-image' bindtap='choiceImg'>
+      <image class='form-image-icon' src='/images/common/icon_add.png' wx:if='{{!coverUrl}}'></image>
+      <image class='form-image-value' src='{{coverUrl}}' wx:else></image>
+    </view>
+  </view>
+  <view class='form-btn' bindtap='addType'>新增</view>
+</view>

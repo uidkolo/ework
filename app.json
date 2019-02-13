@@ -1,10 +1,13 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/index/workList/workList",
     "pages/mine/mine",
+    "pages/index/index",
+    "pages/addType/addType",
+    "pages/index/workList/workList",
+    
     "pages/issue/issue",
     "pages/index/workList/detail/detail"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
