@@ -20,7 +20,7 @@
     <text class='form-label'>选择封面</text>
     <view class='form-image' bindtap='choiceImg'>
       <image class='form-image-icon' src='/images/common/icon_add.png' wx:if='{{!coverUrl}}'></image>
-      <image class='form-image-value' src='{{coverUrl}}' wx:else></image>
+      <image class='form-image-value' mode='aspectFill' src='{{coverUrl}}' wx:else></image>
     </view>
   </view>
   <view class='form-btn' bindtap='addType'>新增</view>

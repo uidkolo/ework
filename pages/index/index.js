@@ -49,7 +49,7 @@ Page({
     }).then(data=>{
       wx.hideLoading()
       if(data.length>0){
-        this.data.jobTypes.concat(data)
+        this.data.jobTypes = this.data.jobTypes.concat(data)
         this.setData({
           pageNo: this.data.pageNo++,
           jobTypes:this.data.jobTypes

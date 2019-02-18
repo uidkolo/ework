@@ -30,14 +30,25 @@ Page({
       let url = '/wx/login'
       wx.login({
         success: res=>{
+          // console.log({
+          //   code: res.code,
+          //   encryptedData: userInfo.encryptedData,
+          //   iv: userInfo.iv,
+          //   rawData: userInfo.rawData,
+          //   signature: userInfo.signature
+          // })
           getApp().post(url, {
             code: res.code,
             encryptedData: userInfo.encryptedData,
             iv: userInfo.iv,
-            rawData: userInfo.rawData,
+            rawData: userInfo.rawData, 
             signature: userInfo.signature
           }).then(data=>{
-            console.log(data)
+            wx.setStorageSync('skey', data.skey)
+            wx.setStorageSync('userInfo', data.userInfo)
+            // this.setData({
+            //   loginMask: false
+            // })
           })
         }
       })

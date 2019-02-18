@@ -11,6 +11,10 @@ App({
       wx.request({
         url: `https://www.exiaoyuanbang.com${url}`,
         method: 'POST',
+        header:{
+          'weapp-type': 'jz',
+          'skey': wx.getStorageSync('skey')
+        },
         data: data == undefined ? {} : data,
         success: res => {
           if (res.data.code == 200) {
@@ -24,6 +28,7 @@ App({
               title: res.data.message,
               image: '/images/common/tip.png'
             })
+            reject()
           }
         }
       })

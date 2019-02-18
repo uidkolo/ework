@@ -14,10 +14,10 @@
 </view>
 <image class='bg' src='/images/bg.jpg'></image>
 <view class='container'>
-  <navigator class='item' wx:for='{{list}}' wx:key='{{index}}' url='/pages/index/workList/workList?id={{item.id}}'>
-    <image class='item-img' src='{{item.cover}}'></image>
-    <view class='name'>{{item.name}}</view>
-    <view class='description'>{{item.description}}</view>
+  <navigator class='item' wx:for='{{jobTypes}}' wx:key='{{index}}' url='/pages/index/workList/workList?id={{item.id}}'>
+    <image class='item-img' src='{{item.coverUrl}}'></image>
+    <view class='name'>{{item.categoryName}}</view>
+    <view class='description'>{{item.categoryDesc}}</view>
   </navigator>
 </view>
 <view class='end'>

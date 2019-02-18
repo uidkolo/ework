@@ -55,14 +55,15 @@ Page({
   // 新增
   addType(){
     wx.showLoading({
-      title: '正在上传',
+      title: '正在新增',
     })
     let url = '/wx/job-type'
     getApp().post(url, {
-      "categoryDesc": this.data.categoryDesc,
-      "categoryName": this.data.categoryName,
-      "coverUrl": this.data.coverUrl,
-      "schoolId": this.data.schoolId
+      categoryCode: 0,
+      categoryDesc: this.data.categoryDesc,
+      categoryName: this.data.categoryName,
+      coverUrl: this.data.coverUrl,
+      schoolId: this.data.schoolId
     }).then(data=>{
       wx.hideLoading()
       wx.showToast({
