@@ -12,14 +12,22 @@
     <text class='search-placeholder'>搜索兼职</text>
   </navigator>
 </view>
-<image class='bg' src='/images/bg.jpg'></image>
+<!-- <image class='bg' src='/images/bg.jpg'></image> -->
 <view class='container'>
-  <navigator class='item' wx:for='{{jobTypes}}' wx:key='{{index}}' url='/pages/index/workList/workList?id={{item.id}}'>
-    <image class='item-img' src='{{item.coverUrl}}'></image>
-    <view class='name'>{{item.categoryName}}</view>
-    <view class='description'>{{item.categoryDesc}}</view>
+  <!-- <navigator class='item' wx:for='{{jobTypes}}' wx:key='{{index}}' url='/pages/index/workList/workList?id={{item.id}}'>
+    <image class='item-img' src='/images/test/01.png'></image>
+    <view class='item-content'>
+      <view class='name'>{{item.categoryName}}</view>
+      <view class='description'>{{item.categoryDesc}}</view>
+    </view>
+  </navigator> -->
+  <navigator class='item' url='/pages/index/workList/workList'>
+    <image class='item-img' src='/images/test/04.png'></image>
   </navigator>
-</view>
-<view class='end'>
-  <text>-- END --</text>
+  <navigator class='item' url='/pages/index/workList/workList'>
+    <image class='item-img' src='/images/test/02.png'></image>
+  </navigator>
+  <navigator class='item' >
+    <image class='item-img' src='/images/test/01.png'></image>
+  </navigator>
 </view>

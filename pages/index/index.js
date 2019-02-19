@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    end: false,
     pageNo: 1,
     jobTypes: []
   },
@@ -48,17 +47,11 @@ Page({
       schoolId: this.data.schoolId
     }).then(data=>{
       wx.hideLoading()
-      if(data.length>0){
-        this.data.jobTypes = this.data.jobTypes.concat(data)
-        this.setData({
-          pageNo: this.data.pageNo++,
-          jobTypes:this.data.jobTypes
-        })
-      }else{
-        this.setData({
-          end:true
-        })
-      }
+      this.data.jobTypes = this.data.jobTypes.concat(data)
+      this.setData({
+        pageNo: this.data.pageNo++,
+        jobTypes: this.data.jobTypes
+      })
     })
   },
   /**
