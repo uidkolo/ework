@@ -1,50 +1,73 @@
-<view class='top-nav'>
-  <navigator class='search' hover-class='none'>
-    <icon type='search' color='#16a9ff' size='18'></icon>
-    <text class='search-placeholder'>输入名称、搜索兼职</text>
-  </navigator>
-</view>
+<import src='../../../../template/search/search.wxml' />
+<login id='login' bindlogin='login'></login>
+<template is="search" />
 <image class='bg' mode='top' src='/images/bg.jpg'></image>
 
-<view class='container'>
+<scroll-view class='container' scroll-y>
+  <!-- 分享 -->
+  <button class='share' open-type='share'>
+    <image class='share-icon' src='/images/common/icon_wechat.png'></image>
+    <text>分享</text>
+  </button>
+
   <swiper indicator-dots indicator-active-color='#16a9ff' autoplay circular>
     <swiper-item>
-      <image class='swiper-img' src='/images/test/01.jpg'></image>
-    </swiper-item>
-    <swiper-item>
-      <image class='swiper-img' src='/images/test/02.jpg'></image>
-    </swiper-item>
-    <swiper-item>
-      <image class='swiper-img' src='/images/test/03.jpg'></image>
+      <image class='swiper-img' src='{{info.coverUrl}}' bindload='imgLoad' data-obj='cover' style='width:{{cover.width}}rpx;height:{{cover.height}}rpx;' bindtap='view'></image>
     </swiper-item>
   </swiper>
 
   <view class='info'>
     <view class='info-item info-name'>
-      <text class='info-value'>每天傍晚学校门口发传单，请快快报名</text>
+      <text class='info-value'>{{info.title}}</text>
     </view>
     <view class='info-item'>
       <image class='info-icon' src='/images/common/icon_date.png'></image>
-      <text class='info-value'>2018/12/12 - 2019/01/18</text>
+      <text class='info-value'>{{info.startTime}} 至 {{info.endTime}}</text>
     </view>
     <view class='info-item'>
       <image class='info-icon' src='/images/common/icon_time.png'></image>
-      <text class='info-value'>14:00 - 18:00</text>
+      <text class='info-value'>{{info.timeDesc}}</text>
     </view>
     <view class='info-item'>
       <image class='info-icon' src='/images/common/icon_position.png'></image>
-      <text class='info-value'>福州大学城宿舍楼</text>
+      <text class='info-value'>{{info.jobAddress}}</text>
     </view>
-    <view class='info-description'> 新店开张，因推广需要，现招聘20人发传单，每天固定时间再学校门口发传单，按次结算费用，有兴趣的同学们赶紧来报名吧！！！</view>
+    <view class='info-description'> {{info.jobDetail}}</view>
+  </view>
+</scroll-view>
+
+<view class='bottom-box' wx:if='{{info.isJoin==0}}'>
+  <view class='bottom'>
+    <view class='info-num'>
+      <view class='info-num-item'>人数<text class='info-num-red'>{{info.recruitNum}}</text>人</view>
+      <view class='info-num-item'>已报名<text class='info-num-red'>{{info.joinNum}}</text>人</view>
+    </view>
+    <view class='bottom-btn' bindtap='apply'>立即报名</view>
   </view>
 </view>
 
-<view class='bottom-box'>
+<view class='bottom-box' wx:if='{{info.isJoin==1}}'>
   <view class='bottom'>
-    <view class='info-num'>
-      <view class='info-num-item'>招聘<text class='info-num-red'>20</text>人</view>
-      <view class='info-num-item'>已报名<text class='info-num-red'>10</text>人</view>
+    <view class='bottom-timer'>
+      <block wx:if='{{jobStatus==0}}'>
+        <view>距开始</view>
+        <view><text class='info-num-red'>{{day}}</text>天<text class='info-num-red'>{{hour}}</text>时<text class='info-num-red'>{{minute}}</text>分<text class='info-num-red'>{{second}}</text>秒</view>
+      </block>
+      <view wx:if='{{jobStatus!=0}}'>
+        <text class='info-num-red' wx:if='{{jobStatus==1}}'>进行中</text>
+        <text class='info-num-red' wx:if='{{jobStatus==2}}'>已结束</text>
+      </view>
     </view>
-    <view class='bottom-btn'>立即报名</view>
+    <view class='bottom-btn cancel' bindtap='cancelApply'>取消报名</view>
+    <view class='bottom-btn join' bindtap='joinGroup'>加入群聊</view>
   </view>
 </view>
+
+<!-- 查看二维码 -->
+  <view class='mask' wx:if='{{qrcodeMask}}'>
+    <view class='qrcode'>
+      <image class='qrcode-img' src='{{info.qrcodeUrl}}' bindload='imgLoad' data-obj='qrcode' style='width:{{qrcode.width}}rpx;height:{{qrcode.height}}rpx;'></image>
+      <view class='qrcode-save' bindtap='saveQrcode'>保存到相册</view>
+      <icon type='cancel' class='qrcode-cancel' size='80rpx' color='#ffffff' bindtap='closeMask'></icon>
+    </view>
+  </view>

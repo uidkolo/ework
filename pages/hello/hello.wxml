@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class='logo-box'>
+    <image class='logo' src='/images/logo.png'></image>
+    <view class='earth-orbit orbit'>
+      <view class='planet earth'></view>
+      <view class='venus-orbit orbit'>
+        <view class='planet venus'></view>
+        <view class='mercury-orbit orbit'>
+          <view class='planet mercury'></view>
+          <view class='sun'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='content-title'>e兼职</view>
+    <view class='content-sub-title'>大学生校园兼职平台！</view>
+    <view class='content-btn' bindtap='start'>开始兼职</view>
+  </view>
+</view>

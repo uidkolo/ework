@@ -1,0 +1,8 @@
+<template name='search'>
+  <view class='top-nav'>
+    <navigator class='search' hover-class='none' url='/pages/search/search'>
+      <icon type='search' color='#16a9ff' size='18'></icon>
+      <text class='search-placeholder'>输入名称、搜索兼职</text>
+    </navigator>
+  </view>
+</template>

@@ -1,14 +1,18 @@
 {
   "pages": [
+    "pages/hello/hello",
+    "pages/selectSchool/selectSchool",
+    "pages/issue/issue",
+    "pages/admin/admin",
+    "pages/admin/addType/addType",
     "pages/index/index",
     "pages/mine/mine",
-    
-    "pages/addType/addType",
     "pages/index/workList/workList",
-    
-    "pages/issue/issue",
-    "pages/index/workList/detail/detail"
-    
+    "pages/index/workList/detail/detail",
+    "pages/admin/deleteType/deleteType"
+  ],
+  "navigateToMiniProgramAppIdList": [
+    "wx9b617ea65d060271"
   ],
   "window": {
     "backgroundTextStyle": "light",

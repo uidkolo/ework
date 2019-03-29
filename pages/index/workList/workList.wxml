@@ -1,45 +1,30 @@
-<view class='top-nav'>
-  <navigator class='search' hover-class='none'>
-    <icon type='search' color='#16a9ff' size='18'></icon>
-    <text class='search-placeholder'>输入名称、搜索兼职</text>
-  </navigator>
-</view>
-<image class='bg' src='/images/bg.jpg'></image>
-
-<view class='container'>
-  <view class='list'>
-    <navigator class='item' url='/pages/index/workList/detail/detail'>
-      <image class='item-img' src='/images/test/01.jpg'></image>
-      <view class='item-right'>
-        <view class='item-name'>每天傍晚发传单</view>
-        <view class='item-date'>兼职日期：2018/12/12 - 2019/01/18</view>
-        <view class='item-num'>
-          <view class='item-num-item'> 招聘<text class='item-num-red'>10</text>人</view>
-          <view class='item-num-item'> 已报名<text class='item-num-red'>8</text>人</view>
+<import src='../../../template/search/search.wxml' />
+<view class='page'>
+  <template is="search" />
+  <image class='bg' src='/images/bg.jpg'></image>
+  <view class='container'>
+    <view class='list'>
+      <navigator class='item' wx:for='{{jobs}}' wx:key='{{index}}' url='/pages/index/workList/detail/detail?id={{item.id}}'>
+        <image class='item-img' src='{{item.coverUrl}}' mode='aspectFill'></image>
+        <view class='item-right'>
+          <view class='item-name'>{{item.title}}</view>
+          <view class='item-date'>日期：{{item.startTime}} 至 {{item.endTime}}</view>
+          <view class='item-num'>
+            <view class='item-num-item'> 人数
+              <text class='item-num-red'>{{item.recruitNum}}</text>人</view>
+            <view class='item-num-item'> 已报名
+              <text class='item-num-red'>{{item.joinNum}}</text>人</view>
+          </view>
         </view>
+      </navigator>
+      <view class='end' wx:if='{{jobs.length>0&&end}}'>
+        <text>-- END --</text>
       </view>
-    </navigator>
-    <navigator class='item'>
-      <image class='item-img' src='/images/test/01.jpg'></image>
-      <view class='item-right'>
-        <view class='item-name'>每天傍晚发传单</view>
-        <view class='item-date'>兼职日期：2018/12/12 - 2019/01/18</view>
-        <view class='item-num'>
-          <view class='item-num-item'> 招聘<text class='item-num-red'>10</text>人</view>
-          <view class='item-num-item'> 已报名<text class='item-num-red'>8</text>人</view>
-        </view>
+      <view class='null' wx:if='{{jobs.length==0}}'>
+        <image class='null-image' src='/images/null.jpg'></image>
+        <text class='null-text'>空空如也~~</text>
+        <navigator open-type='switchTab' class='null-btn' url='/pages/index/index'>别处看看</navigator>
       </view>
-    </navigator>
-    <navigator class='item'>
-      <image class='item-img' src='/images/test/01.jpg'></image>
-      <view class='item-right'>
-        <view class='item-name'>每天傍晚发传单</view>
-        <view class='item-date'>兼职日期：2018/12/12 - 2019/01/18</view>
-        <view class='item-num'>
-          <view class='item-num-item'> 招聘<text class='item-num-red'>10</text>人</view>
-          <view class='item-num-item'> 已报名<text class='item-num-red'>8</text>人</view>
-        </view>
-      </view>
-    </navigator>
+    </view>
   </view>
 </view>

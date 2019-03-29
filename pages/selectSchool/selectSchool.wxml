@@ -1,0 +1,7 @@
+<view class='title'>请选择您的学校</view>
+<picker-view bindchange='pickerSchool'>
+  <picker-view-column>
+    <view class='item' wx:for='{{schools}}' wx:key='{{index}}'>{{item.name}}</view>
+  </picker-view-column>
+</picker-view>
+<view class='btn' bindtap='toIndex'>确定</view>

@@ -1,44 +1,72 @@
-<view class='top-nav'>
-  <navigator class='search' hover-class='none'>
-    <icon type='search' color='#16a9ff' size='18'></icon>
-    <text class='search-placeholder'>输入名称、搜索兼职</text>
-  </navigator>
-</view>
-<image class='bg' src='/images/bg_02.jpg'></image>
+<import src='../../template/search/search.wxml' />
+<login id='login' bindlogin='login'></login>
+<view class='page'>
+  <template is="search" />
+  <image class='bg' src='/images/bg_02.jpg'></image>
 
-<view class='info'>
-  <view class='info-headImg'>
-    <image class='info-img' src='/images/test/01.jpg'></image>
-  </view>
-  <view class='nickname'>胡杨</view>
-</view>
-
-<view class='work'>
-  <view class='work-tab'>
-    <view class='work-tab-item work-tab-item--active'>我发布的兼职</view>
-    <view class='work-tab-item'>我参加的兼职</view>
-  </view>
-  <view class='work-list'>
-    <view class='null'>
-      <image class='null-image' src='/images/null.jpg'></image>
-      <text class='null-text'>你还没有发布任何兼职</text>
-      <text>赶快去发布吧！</text>
-    </view>
-  </view>
-</view>
-
-<view class='mask' wx:if='{{loginMask}}'>
-  <view class='login'>
-    <view class='login-title'>登录</view>
-    <view class='login-content'>
-      <view class='login-content-item'>
-        <text class='login-content-dot'></text>
-        <text class='login-content-text'>获取您的微信昵称、头像</text>
+  <view class='container'>
+    <view class='info'>
+      <view class='info-headImg'>
+        <image class='info-img' src='{{avatar}}'></image>
       </view>
+      <view class='nickname'>{{nickName}}</view>
     </view>
-    <button class='login-btn' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>
-      <image class='login-btn-icon' src='/images/common/wechat.png'></image>
-      <text>授权登录</text>
-    </button>
+
+    <view class='work'>
+      <view class='work-tab'>
+        <view class='work-tab-item {{tabIndex==0?"active":""}}' bindtap='tab' data-index='0'>我的报名</view>
+        <view class='work-tab-item {{tabIndex==1?"active":""}}' bindtap='tab' data-index='1'>我的发布</view>
+      </view>
+      <!-- 参加的兼职 -->
+      <scroll-view class='work-list' scroll-y wx:if='{{tabIndex==0}}' bindscrolltolower='getMyJoin'>
+        <navigator class='work-item' wx:for='{{joinData.list}}' wx:key='{{index}}' url='/pages/index/workList/detail/detail?id={{item.id}}'>
+          <image class='work-item-img' src='{{item.coverUrl}}' mode='aspectFill'></image>
+          <view class='work-item-right'>
+            <view class='work-item-name'>{{item.title}}</view>
+            <view class='work-item-date'>日期: {{item.startTime}}至{{item.endTime}}</view>
+            <view class='work-item-num'>
+              <view class='work-item-num-item'> 人数
+                <text class='work-item-num-red'>{{item.recruitNum}}</text>人</view>
+              <view class='work-item-num-item'> 已报名
+                <text class='work-item-num-red'>{{item.joinNum}}</text>人</view>
+            </view>
+          </view>
+        </navigator>
+        <view class='null' wx:if='{{joinData.list.length==0}}'>
+          <image class='null-image' src='/images/null.jpg'></image>
+          <text class='null-text'>你还没有报名</text>
+          <text>赶快去看看吧！</text>
+          <navigator open-type='switchTab' class='null-btn' url='/pages/index/index'>找找看</navigator>
+        </view>
+        <view class='end' wx:if='{{joinData.end && joinData.list.length>0}}'>
+          <text>-- END --</text>
+        </view>
+      </scroll-view>
+      <!-- 发布的兼职 -->
+      <scroll-view class='work-list' scroll-y wx:if='{{tabIndex==1}}' bindscrolltolower='getMyPub'>
+        <navigator class='work-item' wx:for='{{pubData.list}}' wx:key='{{index}}' url='/pages/index/workList/detail/detail?id={{item.id}}'>
+          <image class='work-item-img' src='{{item.coverUrl}}' mode='aspectFill'></image>
+          <view class='work-item-right'>
+            <view class='work-item-name'>{{item.title}}</view>
+            <view class='work-item-date'>日期：{{item.startTime}} 至 {{item.endTime}}</view>
+            <view class='work-item-num'>
+              <view class='work-item-num-item'> 人数
+                <text class='work-item-num-red'>{{item.recruitNum}}</text>人</view>
+              <view class='work-item-num-item'> 已报名
+                <text class='work-item-num-red'>{{item.joinNum}}</text>人</view>
+            </view>
+          </view>
+        </navigator>
+        <view class='null' wx:if='{{pubData.list.length==0}}'>
+          <image class='null-image' src='/images/null.jpg'></image>
+          <text class='null-text'>你还没有发布</text>
+          <text>赶快去发布吧！</text>
+          <navigator open-type='switchTab' class='null-btn' url='/pages/issue/issue'>去发布</navigator>
+        </view>
+        <view class='end' wx:if='{{pubData.end && pubData.list.length>0}}'>
+          <text>-- END --</text>
+        </view>
+      </scroll-view>
+    </view>
   </view>
 </view>

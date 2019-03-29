@@ -1,19 +1,25 @@
 .bg{
   width: 100%;
-  height: 500rpx;
+  height: 400rpx;
   position: fixed;
   top: 0;
   left: 0;
 }
 
+.container{
+  padding-top: 360rpx;
+  padding-bottom: 20rpx;
+}
 .info{
-  position: relative;
+  position: absolute;
   z-index: 2;
+  left: 50%;
+  top: 150rpx;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  margin-top: 200rpx;
 }
 .info-headImg{
   border: 1rpx solid #fff;
@@ -38,9 +44,9 @@
 
 .work{
   border-radius: 8rpx;
-  margin: 40rpx 30rpx 0;
   background: #fff;
-  height: 500rpx;
+  height: 100%;
+  margin: 0 20rpx;
   position: relative;
   z-index: 2;
   box-shadow: 0 1px 20rpx 0 rgba(0,0,0,0.15);
@@ -48,7 +54,11 @@
 .work-tab{
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #f6f6f6;
+  border-bottom: 1px solid #e5e5e5;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 .work-tab-item{
   width: 50%;
@@ -59,11 +69,11 @@
   line-height: 90rpx;
   color: #666;
 }
-.work-tab-item--active{
+.work-tab-item.active{
   color: #16a9ff;
 }
 .work-tab-item+.work-tab-item{
-  border-left: 1px solid #f6f6f6;
+  border-left: 1px solid #e5e5e5;
 }
 
 .login{
@@ -111,4 +121,57 @@
 }
 .login-btn::after{
   border: none;
+}
+
+
+.work-list{
+  padding-top: 110rpx;
+  height: 100%;
+}
+.work-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx;
+  border: 1px solid #e5e5e5;
+  margin: 20rpx 30rpx 0;
+  border-radius: 8rpx;
+}
+.work-item:first-child{
+  margin: 0 30rpx 0;
+}
+.work-item-img{
+  width: 150rpx;
+  height: 150rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+.work-item-right{
+  min-height: 150rpx;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.work-item-name{
+  font-size: 30rpx;
+  color: #333;
+}
+.work-item-date{
+  font-size: 24rpx;
+  color: #666;
+}
+.work-item-num{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+}
+.work-item-num-item{
+  margin-right: 40rpx;
+}
+.work-item-num-red{
+  color: red;
+  margin: 0 5rpx;
 }

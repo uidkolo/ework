@@ -1,0 +1,162 @@
+.container{
+  background: linear-gradient(#49a09d,#5f2c82);
+}
+
+/* KEYFRAMES */
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(-135deg);
+  }
+  75% {
+    transform: rotate(-225deg);
+  }
+  100% {
+    transform: rotate(-315deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: .25;
+    transform: scale(0.75);
+  }
+}
+
+/* SOLAR SYSTEM */
+
+.solar-system {
+  width: 750rpx;
+  height: 750rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #ffffffa5;
+	border-radius: 50%;
+}
+
+.earth-orbit {
+	width: 495rpx;
+	height: 495rpx;
+  -webkit-animation: spin 12s linear 0s infinite;
+}
+
+.venus-orbit {
+	width: 360rpx;
+	height: 360rpx;
+  -webkit-animation: spin 7.4s linear 0s infinite;
+}
+
+.mercury-orbit {
+	width: 270rpx;
+	height: 270rpx;
+  -webkit-animation: spin 3s linear 0s infinite;
+}
+
+.planet {
+	position: absolute;
+	top: -10rpx;
+  width: 20rpx;
+  height: 20rpx;
+	border-radius: 50%;
+  background-color: #3ff9dc;
+}
+
+.sun {
+	width: 105rpx;
+	height: 105rpx;
+	border-radius: 50%;
+}
+
+.container{
+  padding-top: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.content{
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-title{
+  font-size: 48rpx;
+  text-align: center;
+  color: #fff;
+}
+.content-sub-title{
+  font-size: 28rpx;
+  color: rgba(255,255,255,0.6);
+  margin-top: 20rpx;
+}
+.content-btn{
+  height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 80rpx;
+  text-align: center;
+  background: #49a09d;
+  line-height: 80rpx;
+  margin-top: 100rpx;
+  width: 300rpx;
+}
+
+.logo-box{
+  position: relative;
+}
+.logo{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 150rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 40rpx 0 rgba(0,0,0,0.05);
+}

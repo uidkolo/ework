@@ -1,87 +1,81 @@
 /**index.wxss**/
-.top-nav{
-  background: none;
-  display: flex;
-  align-items: center;
-}
-.search{
-  border-radius: 32px;
-  background: rgba(255,255,255,0.7); 
-  flex-grow: 1;
-  flex-shrink: 0;
-}
-.school{
-  border-radius: 32px;
-  background: rgba(255,255,255,0.7); 
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  margin-right: 10rpx;
-}
-.school-icon{
-  width: 30rpx;
-  height: 30rpx;
-  margin-left: 10rpx;
-}
-.school-picker{
-  height: 32px;
-  display: flex;
-  align-items: center;
-  font-size: 24rpx;
-  color: #666;
-  padding: 0 20rpx;
-}
-.school-name{
-  max-width: 150rpx;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.container{
+  padding-top: 350rpx;
 }
 .bg{
   width: 100%;
-  height: 1100rpx;
+  height: 350rpx;
   position: fixed;
   top: 0;
   left: 0;
 }
-.item{
-  border-radius: 8rpx;
-  margin-top: 20rpx;
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30rpx;
+}
+.list-item{
+  width: 330rpx;
+  height: 154rpx;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.item:first-child{
-  margin-top: 0;
-}
-.item-img{
-  width: 100%;
-  height: 260rpx;
-}
-.item-content{
-  position: absolute;
   border-radius: 8rpx;
-  width: 50%;
-  height: 200rpx;
-  background: rgba(0,0,0,0.4);
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.1);
+}
+.list-item:nth-child(odd){
+  margin-right: 30rpx;
+}
+.list-item-bg{
+  width: 330rpx;
+  height: 154rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8rpx;
+}
+.list-item-content{
+  position: relative;
   z-index: 2;
+  height: 154rpx;
+  width: 330rpx;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-left: 20rpx;
 }
-.name{
-  top: 30rpx;
-  width: 100%;
-  font-size: 40rpx;
-  margin-top: 20rpx;
+.list-item-name{
+  color: #1e2575;
+  font-size: 32rpx;
   font-weight: bold;
-  color: #fff;
-  text-align: center;
 }
-.description{
-  font-size: 28rpx;
-  color: rgba(255,255,255,0.8);
-  margin-top: 20rpx;
+.list-item-description{
+  font-size: 24rpx;
+  color: #6b4b8c;
+  margin-top: 10rpx;
+}
+
+.attention{
+  width: 600rpx;
+  height: 164rpx;
+}
+
+.navToStudent{
+  background: #2d8cf0;
+  color: #fff;
+  height: 60rpx;
+  font-size: 24rpx;
+  padding: 0 10rpx 0 20rpx;
+  border-radius: 60rpx 0 0 60rpx;
+  position: fixed;
+  bottom: 80rpx;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.navToStudent-icon{
+  width: 30rpx;
+  height: 30rpx;
 }
